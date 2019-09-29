@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">AACGank</string>
+
+    <string name="title_newest">今日最新干货</string>
+    <string name="title_null"> </string>
+
+    <string name="bottom_newest">最新</string>
+    <string name="bottom_classify">分类</string>
+    <string name="bottom_weal">福利</string>
+    <string name="bottom_essay">文章</string>
+
+    <string name="nav_history">历史干货</string>
+
+
+    <string-array name="gank_tab">
+
+        <item>Android</item>
+        <item>iOS</item>
+        <item>前端</item>
+        <item>拓展资源</item>
+
+        <item>休息视频</item>
+
+
+    </string-array>
+
+
+</resources>

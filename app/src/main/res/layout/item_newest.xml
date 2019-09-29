@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.ct.aacgank.classify.data.ClassifyBean" />
+
+        <variable
+            name="isVisible"
+            type="Boolean" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_item_newest"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:imageUrl="@{model.url}"
+            app:isVisible='@{ isVisible }' />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_classify_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_72"
+            android:background="?android:selectableItemBackground"
+            android:paddingStart="@dimen/dimen_16"
+            android:paddingEnd="@dimen/dimen_16"
+            app:htmlUrl="@{model.url}"
+            app:isVisible='@{!isVisible}'
+            app:title="@{model.desc}"
+            >
+
+
+            <ImageView
+
+                android:id="@+id/img_item_newest_icon"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_newest_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_56"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{model.desc}"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="测试数据111111111111111111111111111111111111111" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_56"
+                android:layout_marginBottom="@dimen/dimen_16"
+                android:text="@{model.who}"
+
+                android:textSize="@dimen/text_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_newest_title"
+
+                tools:text="11111111" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+
+</layout>

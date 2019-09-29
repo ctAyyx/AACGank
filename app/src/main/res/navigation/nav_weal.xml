@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_weal"
+    app:startDestination="@id/wealFragment">
+
+    <fragment
+        android:id="@+id/wealFragment"
+        android:name="com.ct.aacgank.weal.WealFragment"
+        android:label=" " />
+
+    <!--  WebFragment  -->
+    <action
+        android:id="@+id/action_global_webFragment"
+        app:destination="@id/webFragment" />
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.ct.aacgank.web.WebFragment">
+        <argument
+            android:name="htmlUrl"
+            app:argType="string" />
+        <argument
+            android:name="title"
+
+            app:argType="string" />
+    </fragment>
+
+    <!--  侧滑栏界面  -->
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.ct.aacgank.history.HistoryFragment"
+        android:label="@string/nav_history">
+        <action
+            android:id="@+id/action_historyFragment_to_historyDetailFragment"
+            app:destination="@id/historyDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyDetailFragment"
+        android:name="com.ct.aacgank.history.ui.HistoryDetailFragment"
+        android:label=" ">
+
+        <argument
+            android:name="dateList"
+            app:argType="com.ct.aacgank.classify.data.ClassifyBean[]" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

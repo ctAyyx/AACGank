@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 对于Android9默认使用Https 在这里配置cleartextTrafficPermitted = 'true' 来启用明文请求(http) -->
+<network-security-config>
+   <base-config cleartextTrafficPermitted="true"/>
+</network-security-config>

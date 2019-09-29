@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.ct.aacgank.classify.data.ClassifyBean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen_5"
+        android:onClick="@{clickListener}"
+        app:cardElevation="@dimen/dimen_8">
+
+        <com.ct.aacgank.common.widget.AutoImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{model.url}"
+            tools:src="@drawable/mm" />
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

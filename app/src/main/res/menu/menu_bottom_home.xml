@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_newest"
+        android:title="@string/bottom_newest"
+        android:icon="@drawable/ic_newest"
+        />
+    <item android:id="@+id/nav_classify"
+        android:title="@string/bottom_classify"
+        android:icon="@drawable/ic_newest"
+        />
+
+
+    <item android:id="@+id/nav_weal"
+        android:title="@string/bottom_weal"
+        android:icon="@drawable/ic_newest"
+        />
+
+</menu>

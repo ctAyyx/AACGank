@@ -1,0 +1,85 @@
+/* 依赖包 */
+
+ext.deps = [:]
+
+def versions = [:]
+versions.gradle = '3.5.0'
+versions.kotlin = '1.3.41'
+versions.androidx = '1.1.0'
+versions.nav_version = '2.1.0'
+versions.retrofit = '2.6.1'
+versions.converter_gson = '2.6.1'
+versions.paging = '2.1.0'
+versions.lifecycle = '2.1.0'
+versions.glide = '4.9.0'
+versions.constraintlayout = '1.1.3'
+
+def gradle = [:]
+gradle.gradle = "com.android.tools.build:gradle:$versions.gradle"
+
+
+def kotlin = [:]
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+
+def build = [:]
+build.min_sdk = 21
+build.target_sdk = 28
+build.tool = '29.0.1'
+build.version_code = 1
+build.version_name = '1.0'
+
+
+//Androidx
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:$versions.androidx"
+androidx.core = "androidx.core:core-ktx:$versions.androidx"
+androidx.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+//Navigation
+def navigation = [:]
+navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$versions.nav_version"
+navigation.ui = "androidx.navigation:navigation-ui-ktx:$versions.nav_version"
+navigation.safe_args = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.nav_version"
+
+//Paging
+def paging = [:]
+paging.runtime = "androidx.paging:paging-runtime-ktx:$versions.paging"
+paging.rxjava2 = "androidx.paging:paging-rxjava2-ktx:$versions.paging"
+
+//Lifecycle
+def lifecycle = [:]
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+
+
+//Retrofit
+def retrofit = [:]
+retrofit.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.converter_gson"
+
+//Glide
+def glide = [:]
+
+glide.glide = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+
+def test = [:]
+test.junit = "junit:junit:4.12"
+test.runner = "androidx.test:runner:1.2.0"
+test.espresso = "androidx.test.espresso:espresso-core:3.2.0"
+
+deps.gradle = gradle
+deps.kotlin = kotlin
+deps.build = build
+deps.androidx = androidx
+deps.navigation = navigation
+deps.paging = paging
+deps.lifecycle = lifecycle
+deps.retrofit = retrofit
+deps.glide = glide
+deps.test = test
+
+
+
+
