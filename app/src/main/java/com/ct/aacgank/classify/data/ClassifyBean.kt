@@ -2,6 +2,12 @@ package com.ct.aacgank.classify.data
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
+
+
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -11,26 +17,39 @@ import com.google.gson.annotations.SerializedName
  * TODO  GanKIo分类数据实体
  */
 
+@Entity(tableName = "classifies")
 data class ClassifyBean(
+
+    @PrimaryKey
+    @ColumnInfo(name = "_id")
     @SerializedName("_id")
-    var id: String,
+    val id: String,
+
     @SerializedName("url")
-    var url: String,
+    val url: String,
+
     @SerializedName("type")
     val type: String,
+
     @SerializedName("createdAt")
     val createdAt: String? = "",
+
     @SerializedName("desc")
     val desc: String? = "",
 
     @SerializedName("publishedAt")
     val publishedAt: String? = "",
+
     @SerializedName("source")
     val source: String? = "",
+
     @SerializedName("used")
     val used: Boolean = false,
+
     @SerializedName("who")
     val who: String? = "",
+
+    @Ignore
     @SerializedName("images")
     val images: List<String>? = null
 
@@ -47,8 +66,30 @@ data class ClassifyBean(
      * who : daimajia
      */
 
+    constructor(
+        id: String,
+
+        url: String,
+
+        type: String,
+
+        createdAt: String? = "",
+
+        desc: String? = "",
+
+        publishedAt: String? = "",
+
+        source: String? = "",
+
+        used: Boolean = false,
+
+        who: String? = ""
+
+    ) : this(id, url, type, createdAt, desc, publishedAt, source, used, who, null)
+
 
     constructor(parcel: Parcel) : this(
+
         id = parcel.readString() ?: "",
         url = parcel.readString() ?: "",
         type = parcel.readString() ?: "",
@@ -65,6 +106,7 @@ data class ClassifyBean(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 
         with(parcel) {
+
             writeString(id)
             writeString(url)
             writeString(type)

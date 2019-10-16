@@ -56,6 +56,11 @@ dependencies {
     implementation deps.lifecycle.extensions
     annotationProcessor deps.lifecycle.compiler
 
+    //Room
+    implementation deps.room.runtime
+    kapt deps.room.compiler
+    implementation deps.room.extension
+
     //Retrofit2
     implementation deps.retrofit.retrofit
     implementation deps.retrofit.gson
@@ -64,7 +69,12 @@ dependencies {
     implementation deps.glide.glide
     annotationProcessor deps.glide.compiler
 
-
+    //Dagger2
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_processor
 
 
 }

@@ -2,8 +2,11 @@ package com.ct.aacgank
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -30,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         val binding =
             DataBindingUtil.setContentView<ActivityHomeBinding>(this, R.layout.activity_home)
@@ -65,8 +69,6 @@ class HomeActivity : AppCompatActivity() {
             navController = it
 
 
-
-
         })
 
 
@@ -76,11 +78,10 @@ class HomeActivity : AppCompatActivity() {
      * 设置标题 要设置标题的destination
      * */
     private fun setTitle(destination: NavDestination, arguments: Bundle?) {
-        if (!arguments?.getString("title").isNullOrEmpty())
-        {
+        if (!arguments?.getString("title").isNullOrEmpty()) {
             //Log.e("TAG","修改标签 ${ arguments?.getString("title")}")
             destination.label = arguments?.getString("title")
-            supportActionBar?.title =  arguments?.getString("title")
+            supportActionBar?.title = arguments?.getString("title")
         }
 
     }
@@ -88,4 +89,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }

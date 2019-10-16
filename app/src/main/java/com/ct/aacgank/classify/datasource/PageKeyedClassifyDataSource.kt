@@ -34,11 +34,18 @@ class PageKeyedClassifyDataSource(
         prevRetry?.invoke()
     }
 
+    init {
+        addInvalidatedCallback {
+            Log.e("TAG","数据无效化。。。。 ")
+        }
+    }
+
     override fun loadInitial(
         params: LoadInitialParams<Int>,
         callback: LoadInitialCallback<Int, ClassifyBean>
     ) {
 
+        Log.e("TAG","开始请求数据。。。。 ")
         networkState.postValue(NetworkState.LOADING)
         initialLoad.postValue(NetworkState.LOADING)
 
@@ -54,6 +61,7 @@ class PageKeyedClassifyDataSource(
             initialLoad.postValue(NetworkState.LOADED)
 
             callback.onResult(result?.data ?: emptyList(), 0, 2)
+
 
         } catch (e: Exception) {
             retry = {

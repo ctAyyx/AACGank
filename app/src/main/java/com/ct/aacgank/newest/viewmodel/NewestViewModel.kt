@@ -1,5 +1,7 @@
 package com.ct.aacgank.newest.viewmodel
 
+import android.content.Context
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import com.ct.aacgank.newest.repository.NewestRepository
 
@@ -9,16 +11,13 @@ import com.ct.aacgank.newest.repository.NewestRepository
  * 时 间  2019/9/20 14:56
  * TODO
  */
-class NewestViewModel(repository: NewestRepository) : ViewModel() {
+class NewestViewModel(repository: NewestRepository, context: Context) : ViewModel() {
 
     private val repoResult = repository.getNewestData()
 
     val newestData = repoResult.pagedList
-
     val refreshState = repoResult.refreshState
-
     val networkState = repoResult.networkState
-
 
     fun refresh() = repoResult.refresh.invoke()
 

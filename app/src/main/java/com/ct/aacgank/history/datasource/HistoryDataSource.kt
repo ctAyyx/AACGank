@@ -119,6 +119,7 @@ class HistoryDataSource(private val serviceApi: ServiceApi) :
         serviceApi.getGankByDate(date.replace("-", "/")).execute().body()?.data?.forEach {
             if (it.key == "福利") {
                 resultMap[date] = History(
+
                     time = date,
                     imageUrl = it.value[0].url,
                     dayData = dayData
